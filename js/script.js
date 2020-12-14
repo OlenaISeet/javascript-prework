@@ -1,4 +1,4 @@
-function playGame(clearMessages, playerInput) {
+function playGame(playerInput) {
     function getMoveName(argMoveId) {
         if (argMoveId == 1) {
             return 'kamień';
@@ -20,6 +20,8 @@ function playGame(clearMessages, playerInput) {
     console.log('Gracz wpisał: ' + playerInput);
 
     let argPlayerMove = getMoveName(playerInput);
+
+    clearMessages();
 
     function displayResult(argComputerMove, argPlayerMove) {
         printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -44,12 +46,12 @@ function playGame(clearMessages, playerInput) {
     }
     displayResult(argComputerMove, argPlayerMove)
 }
-document.getElementById('play-rock').addEventListener('click', function() {
+const playRock = document.getElementById('play-rock').addEventListener('click', function() {
     playGame(1);
 });
-document.getElementById('play-paper').addEventListener('click', function() {
+const playPaper = document.getElementById('play-paper').addEventListener('click', function() {
     playGame(2);
 });
-document.getElementById('play-scissors').addEventListener('click', function() {
+const playScissors = document.getElementById('play-scissors').addEventListener('click', function() {
     playGame(3);
 });
